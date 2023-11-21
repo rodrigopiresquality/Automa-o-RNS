@@ -1,5 +1,4 @@
 export const ELEMENTS = {
-    //Exercício 03
     page: '[class="_100 linkEsqueci"]>[href]',
     recoveryPage: '[class=cabecalhoAcesso]>[class=tituloAzul]',
     esqueci: 'https://rns-hmlg.cnseg.org.br/RegistroNacionalSinistroWeb/esqueci',

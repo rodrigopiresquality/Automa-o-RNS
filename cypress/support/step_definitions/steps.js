@@ -80,3 +80,4 @@ Then("o sistema retorna mensagem de erro informando que o usuário não foi enco
 Then("o sistema envia uma notificação para o e-mail do usuário solicitando confirmação da alteração de senha", () => {
     esqueciSenha.mensagemSucessoSenha()
 })
+//Fim dos elementos do teste "esqueciSenha.feature".
