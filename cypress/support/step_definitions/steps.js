@@ -2,6 +2,7 @@ import {Before, Given, When, And, Then} from "cypress-cucumber-preprocessor/step
 import loginInvalido from "../pages/loginInvalido"
 import loginValido from "../pages/loginValido"
 import esqueciSenha from "../pages/esqueciSenha"
+import consultaSinistroAuto from "../pages/consultaSinistroAuto"
 
 beforeEach(() => {
     cy.viewport(1920, 1080)
@@ -81,3 +82,19 @@ Then("o sistema envia uma notificação para o e-mail do usuário solicitando co
     esqueciSenha.mensagemSucessoSenha()
 })
 //Fim dos elementos do teste "esqueciSenha.feature".
+
+//Início dos elementos do teste "consultaSinistroAuto.feature".
+
+Given("que o usuário esteja na página Consultar Sinistro", () => {
+    consultaSinistroAuto.homePage()
+    consultaSinistroAuto.formEmail()
+    consultaSinistroAuto.formPassword()
+    consultaSinistroAuto.loginButton()
+    consultaSinistroAuto.mensagemConfirmacao()
+    consultaSinistroAuto.conSinistro()
+})
+And("escolher o ramo Auto e clicar em Consultar", () => {
+    consultaSinistroAuto.conSinistro()
+})
+
+//Fim dos elementos do teste "consultaSinistroAuto.feature".
