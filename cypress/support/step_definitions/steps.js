@@ -91,10 +91,57 @@ Given("que o usuário esteja na página Consultar Sinistro", () => {
     consultaSinistroAuto.formPassword()
     consultaSinistroAuto.loginButton()
     consultaSinistroAuto.mensagemConfirmacao()
-    consultaSinistroAuto.conSinistro()
 })
 And("escolher o ramo Auto e clicar em Consultar", () => {
     consultaSinistroAuto.conSinistro()
+})
+When("o usuário inserir o número de sinistro no campo Número do Sinistro", () => {
+    consultaSinistroAuto.numeroSinistro()
+})
+When("o usuário inserir o número de chassi no campo Chassi", () => {
+    consultaSinistroAuto.numeroChassi()
+})
+When("o usuário inserir a placa no campo Placa", () => {
+    consultaSinistroAuto.numeroPlaca()
+})
+When("o usuário inserir o RENAVAM no campo RENAVAM", () => {
+    consultaSinistroAuto.numeroRenavam()
+})
+When("o usuário inserir o CPF no campo CPF", () => {
+    consultaSinistroAuto.numeroCpf()
+})
+When("o usuário inserir o CNPJ no campo CNPJ", () => {
+    consultaSinistroAuto.numeroCnpj()
+})
+When("o usuário inserir a Matriz CNPJ no campo Matriz CNPJ", () => {
+    consultaSinistroAuto.numeroMatriz()
+})
+When("o usuário inserir o CNPJ de Oficina no campo CNPJ Oficina", () => {
+    consultaSinistroAuto.numeroCnpjOficina()
+})
+When("o usuário inserir o CPF do Comprador no campo CPF Comprador", () => {
+    consultaSinistroAuto.numeroCpfComprador()
+})
+When("o usuário inserir o CNPJ do Comprador no campo CNPJ Comprador", () => {
+    consultaSinistroAuto.numeroCnpjComprador()
+})
+When("o usuário inserir o intervalo de data de cadastro nos campos Data de Cadastro Início e Data de Cadastro Fim", () => {
+    consultaSinistroAuto.dataCadastroInicio()
+    consultaSinistroAuto.dataCadastroFim()
+})
+When("o usuário inserir o intervalo de data de ocorrência nos campos Data de Ocorrência Início e Data de Ocorrência Fim", () => {
+    consultaSinistroAuto.dataOcorrenciaFim()
+    consultaSinistroAuto.dataOcorrenciaInicio()
+})
+When("o usuário deixar os filtros necessários para consulta em branco", () => {})
+And("clicar em Consultar", () => {
+    consultaSinistroAuto.botaoConsultar()
+})
+Then("o sistema retorna as informações do sinistro do ramo Auto", () => {
+    consultaSinistroAuto.resultadoConsulta()
+})
+Then("o sistema retorna a informação de que pelo menos um filtro deve ser preenchido", () => {
+    consultaSinistroAuto.resultadoConsultaVazia()
 })
 
 //Fim dos elementos do teste "consultaSinistroAuto.feature".

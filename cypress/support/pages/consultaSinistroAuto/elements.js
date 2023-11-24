@@ -5,5 +5,22 @@ export const ELEMENTS = {
     iconButton: '#submitLogin',
     msgConfirm: '[class="azul"]',
     conSin: 'https://rns-hmlg.cnseg.org.br/RegistroNacionalSinistroWeb/sinistroveiculo/abrirConsultaVeiculo.action?tipoSinistro=2&tipoRamoFaturamento=2',
-    conSinConfirm: '[class=bgTopoForm]'
+    conSinConfirm: '[class=bgTopoForm]>h3',
+    numSinistro: '#idNumeroSinistro',
+    numChassi: '#idChassi',
+    numPlaca: '#idCodigoPlaca',
+    numRenavam: '#idRenavam',
+    numCpf: '#idDocumentoPessoa',
+    numCnpj: '#idDocumentoPessoa',
+    numMatriz: '#idMatrizCNPJ',
+    numCnpjOficina: '#idDocumentoOficina',
+    numCpfComprador: '#idDocumentoComprador',
+    numCnpjComprador: '#idDocumentoComprador',
+    dtCadastroInicio: '#idDataCadastroInicio',
+    dtCadastroFim: '#idDataCadastroFim',
+    dtOcorrenciaInicio: '#idDataOcorrenciaInicio',
+    dtOcorrenciaFim: '#idDataOcorrenciaFim',
+    btnConsultar: '#consultarVeiculo',
+    resultConsulta: '.tab-eventos caption',
+    resultConsultaVazia: '[class=container]>[class=conteudo]>#erroJson2>span>span'
 }

@@ -1,5 +1,5 @@
-Feature: Consultas de sinistros dos ramos disponíveis
-    @focus
+Feature: Consulta de Sinistro do ramo Veículo, utilizando os filtros disponíveis
+    
     Scenario: Consulta de Sinistro Auto através de um número de sinistro
         Given que o usuário esteja na página Consultar Sinistro
         And escolher o ramo Auto e clicar em Consultar
@@ -69,3 +69,24 @@ Feature: Consultas de sinistros dos ramos disponíveis
         When o usuário inserir o CNPJ do Comprador no campo CNPJ Comprador
         And clicar em Consultar
         Then o sistema retorna as informações do sinistro do ramo Auto
+
+    Scenario: Consulta de Sinistro através de um intervalo de data de cadastro
+        Given que o usuário esteja na página Consultar Sinistro
+        And escolher o ramo Auto e clicar em Consultar
+        When o usuário inserir o intervalo de data de cadastro nos campos Data de Cadastro Início e Data de Cadastro Fim
+        And clicar em Consultar
+        Then o sistema retorna as informações do sinistro do ramo Auto
+
+    Scenario: Consulta de Sinistro através de um intervalo de data de ocorrência
+        Given que o usuário esteja na página Consultar Sinistro
+        And escolher o ramo Auto e clicar em Consultar
+        When o usuário inserir o intervalo de data de ocorrência nos campos Data de Ocorrência Início e Data de Ocorrência Fim
+        And clicar em Consultar
+        Then o sistema retorna as informações do sinistro do ramo Auto
+
+    Scenario: Tentativa de consulta de sinistro com os campos sem preenchimento
+        Given que o usuário esteja na página Consultar Sinistro
+        And escolher o ramo Auto e clicar em Consultar
+        When o usuário deixar os filtros necessários para consulta em branco
+        And clicar em Consultar
+        Then o sistema retorna a informação de que pelo menos um filtro deve ser preenchido
