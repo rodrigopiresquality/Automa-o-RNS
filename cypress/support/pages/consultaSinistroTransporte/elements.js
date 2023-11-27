@@ -1,0 +1,23 @@
+export const ELEMENTS = {
+    pageTr: "https://rns-hmlg.cnseg.org.br/RegistroNacionalSinistroWeb/login.jsp",
+    emailInputTr: '[name="login"]',
+    passwordInputTr: '[name="senha"]',
+    iconButtonTr: '#submitLogin',
+    msgConfirmTr: '[class="azul"]',
+    conSinTr: 'https://rns-hmlg.cnseg.org.br/RegistroNacionalSinistroWeb/sinistroTransporte/abrirConsultaTransporte.action?tipoSinistro=5&tipoRamoFaturamento=5',
+    conSinConfirmTr: '[class=bgTopoForm]>h3',
+    numSinistroTr: '#idNumeroSinistro',
+    numChassiTr: '#idChassi',
+    numPlacaTr: '#idCodigoPlaca',
+    numRenavamTr: '#idRenavam',
+    numCpfTr: '#idDocumentoPessoa',
+    numCnpjTr: '#idDocumentoPessoa',
+    numMatrizTr: '#idMatrizCNPJ',
+    dtCadastroInicioTr: '#idDataCadastroInicio',
+    dtCadastroFimTr: '#idDataCadastroFim',
+    dtOcorrenciaInicioTr: '#idDataOcorrenciaInicio',
+    dtOcorrenciaFimTr: '[class=_25]>#idDataOcorrenciaFim',
+    btnConsultarTr: '#consultarTransporte',
+    resultConsultaTr: '.tab-eventos caption',
+    resultConsultaVaziaTr: '[class=container]>[class=conteudo]>#erroJson2>span>span'
+}

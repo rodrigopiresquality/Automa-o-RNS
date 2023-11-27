@@ -6,5 +6,8 @@
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,
     "stepDefinitions": "cypress/support/step_definitions"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3"
   }
 }

@@ -3,12 +3,12 @@ import loginInvalido from "../pages/loginInvalido"
 import loginValido from "../pages/loginValido"
 import esqueciSenha from "../pages/esqueciSenha"
 import consultaSinistroAuto from "../pages/consultaSinistroAuto"
+import consultaSinistroTransporte from "../pages/consultaSinistroTransporte"
 
 beforeEach(() => {
     cy.viewport(1920, 1080)
 })
 
-// Início dos elementos dos testes "loginValido.feature" e "loginInvalido.feature".
 Given("que o usuário acesse a página RNS", () => {
     loginInvalido.homePage()
 })
@@ -36,9 +36,6 @@ Then("uma mensagem de erro de usuário deve ser exibida", () => {
 Then("a página Home é exibida", () => {
     loginValido.mensagemConfirmacao()
 })
-// Fim dos elementos dos testes "loginValido.feature" e "loginInvalido.feature".
-
-//Início dos elementos do teste "esqueciSenha.feature".
 Given("que o usuário acesse a página RNS", () => {
     loginValido.homePage()
 })
@@ -81,11 +78,7 @@ Then("o sistema retorna mensagem de erro informando que o usuário não foi enco
 Then("o sistema envia uma notificação para o e-mail do usuário solicitando confirmação da alteração de senha", () => {
     esqueciSenha.mensagemSucessoSenha()
 })
-//Fim dos elementos do teste "esqueciSenha.feature".
-
-//Início dos elementos do teste "consultaSinistroAuto.feature".
-
-Given("que o usuário esteja na página Consultar Sinistro", () => {
+Given("que o usuário esteja na página Consultar Sinistro Auto", () => {
     consultaSinistroAuto.homePage()
     consultaSinistroAuto.formEmail()
     consultaSinistroAuto.formPassword()
@@ -95,46 +88,46 @@ Given("que o usuário esteja na página Consultar Sinistro", () => {
 And("escolher o ramo Auto e clicar em Consultar", () => {
     consultaSinistroAuto.conSinistro()
 })
-When("o usuário inserir o número de sinistro no campo Número do Sinistro", () => {
+When("o usuário inserir o número de sinistro no campo Número do Sinistro Auto", () => {
     consultaSinistroAuto.numeroSinistro()
 })
-When("o usuário inserir o número de chassi no campo Chassi", () => {
+When("o usuário inserir o número de chassi no campo Chassi Auto", () => {
     consultaSinistroAuto.numeroChassi()
 })
-When("o usuário inserir a placa no campo Placa", () => {
+When("o usuário inserir a placa no campo Placa Auto", () => {
     consultaSinistroAuto.numeroPlaca()
 })
-When("o usuário inserir o RENAVAM no campo RENAVAM", () => {
+When("o usuário inserir o RENAVAM no campo RENAVAM Auto", () => {
     consultaSinistroAuto.numeroRenavam()
 })
-When("o usuário inserir o CPF no campo CPF", () => {
+When("o usuário inserir o CPF no campo CPF Auto", () => {
     consultaSinistroAuto.numeroCpf()
 })
-When("o usuário inserir o CNPJ no campo CNPJ", () => {
+When("o usuário inserir o CNPJ no campo CNPJ Auto", () => {
     consultaSinistroAuto.numeroCnpj()
 })
-When("o usuário inserir a Matriz CNPJ no campo Matriz CNPJ", () => {
+When("o usuário inserir a Matriz CNPJ no campo Matriz CNPJ Auto", () => {
     consultaSinistroAuto.numeroMatriz()
 })
-When("o usuário inserir o CNPJ de Oficina no campo CNPJ Oficina", () => {
+When("o usuário inserir o CNPJ de Oficina no campo CNPJ Oficina Auto", () => {
     consultaSinistroAuto.numeroCnpjOficina()
 })
-When("o usuário inserir o CPF do Comprador no campo CPF Comprador", () => {
+When("o usuário inserir o CPF do Comprador no campo CPF Comprador Auto", () => {
     consultaSinistroAuto.numeroCpfComprador()
 })
-When("o usuário inserir o CNPJ do Comprador no campo CNPJ Comprador", () => {
+When("o usuário inserir o CNPJ do Comprador no campo CNPJ Comprador Auto", () => {
     consultaSinistroAuto.numeroCnpjComprador()
 })
-When("o usuário inserir o intervalo de data de cadastro nos campos Data de Cadastro Início e Data de Cadastro Fim", () => {
+When("o usuário inserir o intervalo de data de cadastro nos campos Data de Cadastro Início e Data de Cadastro Fim Auto", () => {
     consultaSinistroAuto.dataCadastroInicio()
     consultaSinistroAuto.dataCadastroFim()
 })
-When("o usuário inserir o intervalo de data de ocorrência nos campos Data de Ocorrência Início e Data de Ocorrência Fim", () => {
+When("o usuário inserir o intervalo de data de ocorrência nos campos Data de Ocorrência Início e Data de Ocorrência Fim Auto", () => {
     consultaSinistroAuto.dataOcorrenciaFim()
     consultaSinistroAuto.dataOcorrenciaInicio()
 })
-When("o usuário deixar os filtros necessários para consulta em branco", () => {})
-And("clicar em Consultar", () => {
+When("o usuário deixar os filtros necessários para consulta em branco Auto", () => {})
+And("clicar em Consultar Auto", () => {
     consultaSinistroAuto.botaoConsultar()
 })
 Then("o sistema retorna as informações do sinistro do ramo Auto", () => {
@@ -143,5 +136,52 @@ Then("o sistema retorna as informações do sinistro do ramo Auto", () => {
 Then("o sistema retorna a informação de que pelo menos um filtro deve ser preenchido", () => {
     consultaSinistroAuto.resultadoConsultaVazia()
 })
-
-//Fim dos elementos do teste "consultaSinistroAuto.feature".
+Given("que o usuário esteja na página Consultar Sinistro Transporte", () => {
+    consultaSinistroTransporte.homePageTr()
+    consultaSinistroTransporte.formEmailTr()
+    consultaSinistroTransporte.formPasswordTr()
+    consultaSinistroTransporte.loginButtonTr()
+    consultaSinistroTransporte.mensagemConfirmacaoTr()
+})
+And("escolher o ramo Transporte e clicar em Consultar", () => {
+    consultaSinistroTransporte.conSinistroTr()
+})
+When("o usuário inserir o número de sinistro no campo Número do Sinistro Transporte", () => {
+    consultaSinistroTransporte.numeroSinistroTr()
+})
+When("o usuário inserir o número de chassi no campo Chassi Transporte", () => {
+    consultaSinistroTransporte.numeroChassiTr()
+})
+When("o usuário inserir a placa no campo Placa Transporte", () => {
+    consultaSinistroTransporte.numeroPlacaTr()
+})
+When("o usuário inserir o RENAVAM no campo RENAVAM Transporte", () => {
+    consultaSinistroTransporte.numeroRenavamTr()
+})
+When("o usuário inserir o CPF no campo CPF Transporte", () => {
+    consultaSinistroTransporte.numeroCpfTr()
+})
+When("o usuário inserir o CNPJ no campo CNPJ Transporte", () => {
+    consultaSinistroTransporte.numeroCnpjTr()
+})
+When("o usuário inserir a Matriz CNPJ no campo Matriz CNPJ Transporte", () => {
+    consultaSinistroTransporte.numeroMatrizTr()
+})
+When("o usuário inserir o intervalo de data de cadastro nos campos Data de Cadastro Início e Data de Cadastro Fim Transporte", () => {
+    consultaSinistroTransporte.dataCadastroFimTr()
+    consultaSinistroTransporte.dataCadastroInicioTr()
+})
+When("o usuário inserir o intervalo de data de ocorrência nos campos Data de Ocorrência Início e Data de Ocorrência Fim Transporte", () => {
+    consultaSinistroTransporte.dataOcorrenciaInicioTr()
+    consultaSinistroTransporte.dataOcorrenciaFimTr()
+})
+When("o usuário deixar os filtros necessários para consulta em branco Transporte", () => {})
+And("clicar em Consultar Transporte", () => {
+    consultaSinistroTransporte.botaoConsultarTr()
+})
+Then("o sistema retorna as informações do sinistro do ramo Transporte", () => {
+    consultaSinistroTransporte.resultadoConsultaTr()
+})
+Then("o sistema retorna a informação de que pelo menos um filtro deve ser preenchido", () => {
+    consultaSinistroTransporte.resultadoConsultaVaziaTr()
+})
