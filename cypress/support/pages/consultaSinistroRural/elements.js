@@ -1,0 +1,22 @@
+export const ELEMENTS = {
+    pageRr: "https://rns-hmlg.cnseg.org.br/RegistroNacionalSinistroWeb/login.jsp",
+    emailInputRr: '[name="login"]',
+    passwordInputRr: '[name="senha"]',
+    iconButtonRr: '#submitLogin',
+    msgConfirmRr: '[class="azul"]',
+    conSinRr: 'https://rns-hmlg.cnseg.org.br/RegistroNacionalSinistroWeb/sinistroRural/abrirConsultaRural.action?tipoSinistro=7&tipoRamoFaturamento=7',
+    conSinConfirmRr: '[class=bgTopoForm]>h3',
+    numSinistroRr: '#idNumeroSinistro',
+    tipoCultRr: '#divTipoCultura>[class=sbHolder]>[class=sbSelector]',
+    escolheCultRr: '#divTipoCultura>[class=sbHolder]>[class=sbOptions]>li:nth-child(2)',
+    unFedRr: '#divUf>[class=sbHolder]>[class=sbSelector]',
+    escolheUnFedRr: '#divUf>[class=sbHolder]>[class=sbOptions]>li:nth-child(2)',
+    municRr: '#divMunicipio>[class=sbHolder]>[class=sbSelector]',
+    escolheMunicRr: '#divMunicipio>[class=sbHolder]>[class=sbOptions]>li:nth-child(2)',
+    tipoDocRr: '#formConsultarRural>:nth-child(9)>[class=sbHolder]>[class=sbSelector]',
+    escolheDocRr: '#listaTipoConsultaRural+div>[class=sbOptions]>li:nth-child(3)',
+    digDocRr: '#idCpf',
+    btnConsultarRr: '#consultarRural',
+    resultConsultaRr: '.tab-eventos caption',
+    resultConsultaVaziaRr: '[class=container]>[class=conteudo]>#erroJson2>span>span'
+}

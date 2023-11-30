@@ -4,6 +4,7 @@ import loginValido from "../pages/loginValido"
 import esqueciSenha from "../pages/esqueciSenha"
 import consultaSinistroAuto from "../pages/consultaSinistroAuto"
 import consultaSinistroTransporte from "../pages/consultaSinistroTransporte"
+import consultaSinistroRural from "../pages/consultaSinistroRural"
 
 beforeEach(() => {
     cy.viewport(1920, 1080)
@@ -184,4 +185,44 @@ Then("o sistema retorna as informações do sinistro do ramo Transporte", () => 
 })
 Then("o sistema retorna a informação de que pelo menos um filtro deve ser preenchido", () => {
     consultaSinistroTransporte.resultadoConsultaVaziaTr()
+})
+Given("que o usuário esteja na página Consultar Sinistro Rural", () => {
+    consultaSinistroRural.homePageRr()
+    consultaSinistroRural.formEmailRr()
+    consultaSinistroRural.formPasswordRr()
+    consultaSinistroRural.loginButtonRr()
+    consultaSinistroRural.mensagemConfirmacaoRr()
+})
+And("escolher o ramo Rural e clicar em Consultar", () => {
+    consultaSinistroRural.conSinistroRr()
+})
+When("o usuário inserir o número de sinistro no campo Número do Sinistro Rural", () => {
+    consultaSinistroRural.numeroSinistroRr()
+})
+When("o usuário inserir o tipo de cultura no campo Tipo de Cultura Rural", () => {
+    consultaSinistroRural.tipoCulturaRr()
+    consultaSinistroRural.escolheCulturaRr()
+})
+When("o usuário inserir a UF e o município nos campos UF e Município Rural", () => {
+    consultaSinistroRural.ufRr()
+    consultaSinistroRural.escolheUfRr()
+    cy.wait(1000)
+    consultaSinistroRural.municipioRr()
+    consultaSinistroRural.escolheMunicipioRr()
+})
+When("o usuário inserir o documento no campo Tipo de Documento Rural", () => {
+    consultaSinistroRural.tipoDocumentoRr()
+    consultaSinistroRural.escolheDocumentoRr()
+    cy.wait(1000)
+    consultaSinistroRural.digitaDocumentoRr()
+})
+When("o usuário deixar os filtros necessários para consulta em branco Rural", () => {})
+And("clicar em Consultar Rural", () => {
+    consultaSinistroRural.botaoConsultarRr()
+})
+Then("o sistema retorna as informações do sinistro do ramo Rural", () => {
+    consultaSinistroRural.resultadoConsultaRr()
+})
+Then("o sistema retorna a informação de que pelo menos um filtro deve ser preenchido", () => {
+    consultaSinistroRural.resultadoConsultaVaziaRr()
 })
