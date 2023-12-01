@@ -5,6 +5,7 @@ import esqueciSenha from "../pages/esqueciSenha"
 import consultaSinistroAuto from "../pages/consultaSinistroAuto"
 import consultaSinistroTransporte from "../pages/consultaSinistroTransporte"
 import consultaSinistroRural from "../pages/consultaSinistroRural"
+import consultaSinistroPatrimonial from "../pages/consultaSinistroPatrimonial"
 
 beforeEach(() => {
     cy.viewport(1920, 1080)
@@ -225,4 +226,51 @@ Then("o sistema retorna as informações do sinistro do ramo Rural", () => {
 })
 Then("o sistema retorna a informação de que pelo menos um filtro deve ser preenchido", () => {
     consultaSinistroRural.resultadoConsultaVaziaRr()
+})
+Given("que o usuário esteja na página Consultar Sinistro Patrimonial", () => {
+    consultaSinistroPatrimonial.homePagePa()
+    consultaSinistroPatrimonial.formEmailPa()
+    consultaSinistroPatrimonial.formPasswordPa()
+    consultaSinistroPatrimonial.loginButtonPa()
+    consultaSinistroPatrimonial.mensagemConfirmacaoPa()
+})
+And("escolher o ramo Patrimonial e clicar em Consultar", () => {
+    consultaSinistroPatrimonial.conSinistroPa()
+})
+When("o usuário inserir o número de CNPJ no campo CNPJ Patrimonial", () => {
+    consultaSinistroPatrimonial.tipoConsultaPa()
+    consultaSinistroPatrimonial.escolheCnpjPa()
+    consultaSinistroPatrimonial.digitaCnpjPa()
+})
+When("o usuário inserir o número de CPF no campo CPF Patrimonial", () => {
+    consultaSinistroPatrimonial.tipoConsultaPa()
+    consultaSinistroPatrimonial.escolheCpfPa()
+    consultaSinistroPatrimonial.digitaCpfPa()
+})
+When("o usuário inserir o CEP e o número nos campos CEP e Número do endereço de ocorrência Patrimonial", () => {
+    consultaSinistroPatrimonial.tipoConsultaPa()
+    consultaSinistroPatrimonial.escolheEnderecoOcorrenciaPa()
+    consultaSinistroPatrimonial.digitaCepOcorrenciaPa()
+    consultaSinistroPatrimonial.digitaNumeroOcorrenciaPa()
+})
+When("o usuário inserir o CEP e o número nos campos CEP e Número do endereço do segurado Patrimonial", () => {
+    consultaSinistroPatrimonial.tipoConsultaPa()
+    consultaSinistroPatrimonial.escolheEnderecoSeguradoPa()
+    consultaSinistroPatrimonial.digitaCepSeguradoPa()
+    consultaSinistroPatrimonial.digitaNumeroSeguradoPa()
+})
+When("o usuário inserir o número da matriz CNPJ no campo Matriz CNPJ Patrimonial", () => {
+    consultaSinistroPatrimonial.tipoConsultaPa()
+    consultaSinistroPatrimonial.escolheMatrizCnpjPa()
+    consultaSinistroPatrimonial.digitaMatrizCnpjPa()
+})
+When("o usuário deixar os filtros necessários para consulta em branco Patrimonial", () => {})
+And("clicar em Consultar Patrimonial", () => {
+    consultaSinistroPatrimonial.botaoConsultarPa()
+})
+Then("o sistema retorna as informações do sinistro do ramo Patrimonial", () => {
+    consultaSinistroPatrimonial.resultadoConsultaPa()
+})
+Then("o sistema retorna a informação de que pelo menos um filtro deve ser preenchido", () => {
+    consultaSinistroPatrimonial.resultadoConsultaVaziaPa()
 })
