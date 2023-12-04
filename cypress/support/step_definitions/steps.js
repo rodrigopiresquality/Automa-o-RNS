@@ -6,6 +6,7 @@ import consultaSinistroAuto from "../pages/consultaSinistroAuto"
 import consultaSinistroTransporte from "../pages/consultaSinistroTransporte"
 import consultaSinistroRural from "../pages/consultaSinistroRural"
 import consultaSinistroPatrimonial from "../pages/consultaSinistroPatrimonial"
+import consultaSinistroCg from "../pages/consultaSinistroCG"
 
 beforeEach(() => {
     cy.viewport(1920, 1080)
@@ -273,4 +274,40 @@ Then("o sistema retorna as informações do sinistro do ramo Patrimonial", () =>
 })
 Then("o sistema retorna a informação de que pelo menos um filtro deve ser preenchido", () => {
     consultaSinistroPatrimonial.resultadoConsultaVaziaPa()
+})
+Given("que o usuário esteja na página Consultar Sinistro Créditos e Garantias", () => {
+    consultaSinistroCg.homePageCg()
+    consultaSinistroCg.formEmailCg()
+    consultaSinistroCg.formPasswordCg()
+    consultaSinistroCg.loginButtonCg()
+    consultaSinistroCg.mensagemConfirmacaoCg()
+})
+And("escolher o ramo Créditos e Garantias e clicar em Consultar", () => {
+    consultaSinistroCg.conSinistroCg()
+})
+When("o usuário inserir o número de CNPJ no campo CNPJ Créditos e Garantias", () => {
+    consultaSinistroCg.tipoConsultaCg()
+    consultaSinistroCg.escolheCnpjCg()
+    consultaSinistroCg.digitaCnpjCg()
+})
+When("o usuário inserir o número de CPF no campo CPF Créditos e Garantias", () => {
+    consultaSinistroCg.tipoConsultaCg()
+    consultaSinistroCg.escolheCpfCg()
+    consultaSinistroCg.digitaCpfCg()
+})
+When("o usuário inserir o número do sinistro no campo Número do Sinistro Créditos e Garantias", () => {
+    consultaSinistroCg.numeroSinistroCg()
+})
+When("o usuário inserir o nome do segurado no campo Nome do Segurado Créditos e Garantias", () => {
+    consultaSinistroCg.nomeSeguradoCg()
+})
+When("o usuário deixar os filtros necessários para consulta em branco Créditos e Garantias", () => {})
+And("clicar em Consultar Créditos e Garantias", () => {
+    consultaSinistroCg.botaoConsultarCg()
+})
+Then("o sistema retorna as informações do sinistro do ramo Créditos e Garantias", () => {
+    consultaSinistroCg.resultadoConsultaCg()
+})
+Then("o sistema retorna a informação de que pelo menos um filtro deve ser preenchido", () => {
+    consultaSinistroCg.resultadoConsultaVaziaCg()
 })
