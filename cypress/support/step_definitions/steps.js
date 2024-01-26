@@ -7,6 +7,7 @@ import consultaSinistroTransporte from "../pages/consultaSinistroTransporte"
 import consultaSinistroRural from "../pages/consultaSinistroRural"
 import consultaSinistroPatrimonial from "../pages/consultaSinistroPatrimonial"
 import consultaSinistroCg from "../pages/consultaSinistroCG"
+import consultaSinistroToR from "../pages/consultaTodosOsRamos"
 
 beforeEach(() => {
     cy.viewport(1920, 1080)
@@ -310,4 +311,50 @@ Then("o sistema retorna as informações do sinistro do ramo Créditos e Garanti
 })
 Then("o sistema retorna a informação de que pelo menos um filtro deve ser preenchido", () => {
     consultaSinistroCg.resultadoConsultaVaziaCg()
+})
+Given("que o usuário esteja na página Consultar Sinistro Todos os Ramos", () => {
+    consultaSinistroToR.homePageToR()
+    consultaSinistroToR.formEmailToR()
+    consultaSinistroToR.formPasswordToR()
+    consultaSinistroToR.loginButtonToR()
+    consultaSinistroToR.mensagemConfirmacaoToR()
+})
+And("escolher o ramo Todos os Ramos e clicar em Consultar", () => {
+    consultaSinistroToR.conSinistroToR()
+})
+When("o usuário inserir o número de CNPJ no campo CNPJ Todos os Ramos", () => {
+    consultaSinistroToR.tipoConsultaToR()
+    consultaSinistroToR.escolheCnpjToR()
+    consultaSinistroToR.digitaCnpjToR()
+})
+When("o usuário inserir o número de CPF no campo CPF Todos os Ramos", () => {
+    consultaSinistroToR.tipoConsultaToR()
+    consultaSinistroToR.escolheCpfToR()
+    consultaSinistroToR.digitaCpfToR()
+})
+When("o usuário inserir o número de CNPJ inválido no campo CNPJ Todos os Ramos", () => {
+    consultaSinistroToR.tipoConsultaToR()
+    consultaSinistroToR.escolheCnpjToR()
+    consultaSinistroToR.digitaCnpjInvToR()
+})
+When("o usuário inserir o número de CPF inválido no campo CPF Todos os Ramos", () => {
+    consultaSinistroToR.tipoConsultaToR()
+    consultaSinistroToR.escolheCpfToR()
+    consultaSinistroToR.digitaCpfInvToR()
+})
+When("o usuário deixar os filtros necessários para consulta em branco Todos os Ramos", () => {})
+And("clicar em Consultar Todos os Ramos", () => {
+    consultaSinistroToR.botaoConsultarToR()
+})
+Then("o sistema retorna as informações do sinistro do ramo Todos os Ramos", () => {
+    consultaSinistroToR.resultadoConsultaToR()
+})
+Then("o sistema retorna a informação de que o CNPJ é inválido", () => {
+    consultaSinistroToR.resultadoConsultaCnpjInvToR()
+})
+Then("o sistema retorna a informação de que o CPF é inválido", () => {
+    consultaSinistroToR.resultadoConsultaCpfInvToR()
+})
+Then("o sistema retorna a informação de que pelo menos um filtro deve ser preenchido Todos os Ramos", () => {
+    consultaSinistroToR.resultadoConsultaVaziaToR()
 })

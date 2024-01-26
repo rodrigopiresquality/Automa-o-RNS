@@ -32,7 +32,7 @@ class consultaSinistroAuto {
         cy.get(elConsultaSinistroAuto.numPlaca).type('AVI9999')
     }
     numeroRenavam() {
-        cy.get(elConsultaSinistroAuto.numRenavam).type('00643935399')
+        cy.get(elConsultaSinistroAuto.numRenavam).type('00643935320')
     }
     numeroCpf() {
         cy.get(elConsultaSinistroAuto.numCpf).type('52514223000170')

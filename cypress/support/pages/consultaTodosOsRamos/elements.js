@@ -1,0 +1,21 @@
+export const ELEMENTS = {
+    pageToR: "https://rns-hmlg.cnseg.org.br/RegistroNacionalSinistroWeb/login.jsp",
+    emailInputToR: '[name="login"]',
+    passwordInputToR: '[name="senha"]',
+    iconButtonToR: '#submitLogin',
+    msgConfirmToR: '[class="azul"]',
+    conSinToR: 'https://rns-hmlg.cnseg.org.br/RegistroNacionalSinistroWeb/sinistrotodososramos/abrirConsultaTodosOsRamos.action?tipoSinistro=0&tipoRamoFaturamento=2',
+    conSinConfirmToR: '[class=bgTopoForm]>h3',
+    tipoConToR: '#listaTipoConsultaTodosOsRamos+div>[class=sbSelector]',
+    escCpfToR: '#listaTipoConsultaTodosOsRamos+div>ul>li:nth-child(2)>a',
+    digCpfToR: '#cpf',
+    escCnpjToR: '#listaTipoConsultaTodosOsRamos+div>ul>li:nth-child(3)>a',
+    digCnpjToR: '#cnpj',
+    digCpfInvToR: '#cpf',
+    digCnpjInvToR: '#cnpj',
+    btnConsultarToR: '#consultarTodosOsRamos',
+    resultConsultaToR: '#sinistroVeiculoDTO>caption',
+    resultConsultaCnpjInvToR: '[class=container]>[class=conteudo]>#erroJson2>span>span',
+    resultConsultaCpfInvToR: '[class=container]>[class=conteudo]>#erroJson2>span>span',
+    resultConsultaVaziaToR: '[class=container]>[class=conteudo]>#erroJson2>span>span'
+}
